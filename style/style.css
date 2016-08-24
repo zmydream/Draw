@@ -1,0 +1,82 @@
+body{
+	background-color:#A6B1B5;
+    background-image: url(../img/Draw1.jpg);
+    background-size:cover
+}
+#main {
+	border: 0px #000000 solid;
+	position: relative;
+	margin: 0px auto;
+	width: 1350px;
+	height: 640px;
+	position: absolute;
+}
+#top {
+	border: 0px #B93A3A solid;
+	position: relative;
+	margin:0px auto;
+	text-align:center;
+	width: 250px;
+	height: 30px;
+	margin-top: 10px;
+	color: #F3C;
+	line-height: 30px;
+	font-weight: bold;
+	font-size: 30px;
+	margin-left: 470px;
+   /* background-image: url(../img/Draw3.jpg);*/
+}
+#canvas {
+	position: relative;
+	background-color:#FDFBFB;
+	/*canvas是行级样式，先把它变成块级元素，然后再进行居中*/
+	display: block;
+	margin: 0 auto;
+	margin-top: 20px;
+	margin-right: 500px;
+	/*鼠标在canvas中换成该鼠标样式*/
+	cursor:url(../img/link.cur),default;
+	-moz-border-radius: 25px;
+	-webkit-border-radius: 25px;
+	border-radius:20px;				
+	box-shadow:-1px 0 0px #F3C, /*左边阴影*/  
+			    2px 0 2px #F3C, /*右边阴影*/  
+			    0 1px 1px #F3C, /*顶部阴影*/  
+			    0 0px 0px #F3C; /*底边阴影*/ 
+}
+#tool {
+	border: 0px #2F32B4 solid;
+	position: relative;
+	background-image: url(../img/Draw2.jpg);
+	background-size:cover;
+	position: relative;
+	width: 210px;
+	height: 170px;
+	float: right;
+	font-family: 微软雅黑;
+	color: #E122A5;
+	padding: 10px;
+	margin-top: -200px;
+	margin-right: 250px;
+	-moz-border-radius: 25px;
+	-webkit-border-radius: 25px;
+	border-radius:20px;				
+}
+p {
+	border: 0px #2F32B4 solid;
+	float: left;
+	font-family: 微软雅黑;
+	color: #000000;
+	font-size: 12px;	
+	font-weight: bold;
+}
+#foot {
+	border: 0px #1A2858 solid;
+	margin: 0px auto;
+	width: 1000px;
+	height: 30px;
+	margin-top: 50px;
+	text-align: center;
+	line-height: 30px;
+	font-size: 20px;
+}

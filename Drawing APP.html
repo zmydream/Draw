@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Drawing App</title>
+	<link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+  <div id="main">
+    <div id="top">简易画笔工具</div>
+		<canvas id="canvas" width="500" height="500"></canvas>
+		<div id="tool">
+		  橡皮擦:<input type="checkbox" id="btn" name="btn" /><br/><br/>
+			画笔颜色:<input type="text" id="color" name="color" value="#000000" onfocus="javascript:if(this.value=='#000000')this.value='';"/><br/>
+      <p>*请输入16进制表示颜色值！</p>
+			<br/><br/>
+		  画笔粗细:<input type="text" id="line" name="line" value="1" onfocus="javascript:if(this.value=='1')this.value='';" />
+		</div> 
+		<div id="foot">Copyright © 2016 小漆 All Rights Reserved</div>
+	</div>
+<script src="js/utils.js"></script>
+	<script>
+		window.onload = function() {
+			var canvas = document.getElementById('canvas'),
+			    checkbox = document.getElementById('btn'),
+			    color = document.getElementById('color'),
+			    line = document.getElementById('line'),
+			    context = canvas.getContext('2d'),
+			    mouse = utils.captureMouse(canvas);
+
+			function onMouseMove() {
+				if(checkbox.checked) {
+					context.strokeStyle = "#FDFBFB";
+					context.lineWidth = 10;
+				}
+				else {
+					context.strokeStyle = color.value;
+					context.lineWidth = line.value;
+				}
+				context.lineTo(mouse.x, mouse.y);
+				context.stroke();
+			}
+			canvas.addEventListener('mousedown', function() {
+				context.beginPath();
+				context.moveTo(mouse.x, mouse.y);
+				canvas.addEventListener('mousemove', onMouseMove, false);
+			}, false);
+
+			canvas.addEventListener('mouseup',function() {
+				canvas.removeEventListener('mousemove', onMouseMove, false)
+			}, false);
+		};
+	</script>
+</body>
+</html>
